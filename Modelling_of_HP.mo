@@ -40,7 +40,7 @@ package Modelling_of_HP
       import SI = Modelica.SIunits;
 
 
-      constant SI.Accelertion g = 9.81;
+      constant SI.Acceleration g = 9.81;
 
       parameter SI.Length L = 1;
       Real theta(unit = "rad",start = 0.1);
