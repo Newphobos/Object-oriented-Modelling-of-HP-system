@@ -6736,11 +6736,28 @@ package FM3217_Assignment2021 "Assignment for 2021 course"
   package YourFixedModel "Put your model into this package"
     extends Modelica.Icons.BasesPackage;
     model Model_239255 "HP Model"
-      extends AssignmentModels.Model_239255;
-      annotation (experiment(StopTime=1000), Documentation(info="<html>
-<p><br><br><br><br><br><br><br><br><br><br>These are the different errors found in the first simulation.</p>
-<p><br><br><br><img src=\"modelica://FM3217_Assignment2021/Resources/Images/Capture.PNG\"/></p>
-</html>"));
+      extends AssignmentModels.Model_239255(reservoir(
+          MidWidth=200,
+          Hmax=ones(reservoir.n)*(564 + 60),
+          H_start=ones(reservoir.n)*(48 + 564),
+          steadyState=false), river(
+          Hmax=ones(river.n)*130,
+          H_start=ones(river.n)*115,
+          steadyState=false));
+      annotation (experiment(
+          StopTime=1000,
+          __Dymola_NumberOfIntervals=5000,
+          Tolerance=1e-05,
+          __Dymola_Algorithm="Radau"),       Documentation(info="<html>
+<h4>At the first run, the provided model had errors on reservoir and river models as shown in below figure. The list of errors can be seen from figure 1.</h4>
+<p align=\"center\"><br><img src=\"modelica://FM3217_Assignment2021/Resources/Images/Errors.PNG\"/></p>
+<p align=\"center\"><br><b>Figure 1 : Errors found in the first simulation</b></p>
+<h4>When the parameter box was opened and checked for reservoir model, the settings for Hmax and Hstart were as shown in fgure 2.</h4>
+<p>.<img src=\"modelica://FM3217_Assignment2021/Resources/Images/initial reservior settinng.PNG\"/></p>
+<p align=\"center\"><h4>Figure 2 : Problem , Hmax setting is singular for reservoir</h4></p>
+</html>"),
+        Diagram(coordinateSystem(extent={{-160,-100},{180,100}})),
+        Icon(coordinateSystem(extent={{-160,-100},{180,100}})));
     end Model_239255;
   end YourFixedModel;
 
