@@ -6755,6 +6755,7 @@ package FM3217_Assignment2021 "Assignment for 2021 course"
 <h4>When the parameter box was opened and checked for reservoir model, the settings for Hmax and Hstart were as shown in fgure 2.</h4>
 <p>.<img src=\"modelica://FM3217_Assignment2021/Resources/Images/initial reservior settinng.PNG\"/></p>
 <p align=\"center\"><h4>Figure 2 : Problem , Hmax setting is singular for reservoir</h4></p>
+<p align=\"center\"><br>Now we try to run the simulation</p>
 </html>"),
         Diagram(coordinateSystem(extent={{-160,-100},{180,100}})),
         Icon(coordinateSystem(extent={{-160,-100},{180,100}})));
